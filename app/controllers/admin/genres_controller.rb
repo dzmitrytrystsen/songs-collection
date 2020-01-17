@@ -10,18 +10,39 @@ class Admin::GenresController < ApplicationController
   end
 
   def new
+    @genre = Genre.new
   end
 
   def edit
   end
 
   def create
+    @genres = Genre.new(genre_params)
+
+    respond_to do |format|
+      if @genre.save
+        format.html { redirect_to @genre, notice: 'Genre was successfully created' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
+    respond_to do |format|
+      if @genres.update(genre_params)
+        format.html { redirect_to @genre, notice: 'Genre was successfully updated' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
+    @genre.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_genres_url, notice: 'Genre was successfully destroyed' }
+    end
   end
 
   private

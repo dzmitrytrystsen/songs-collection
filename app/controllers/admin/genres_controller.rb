@@ -1,5 +1,9 @@
-class GenresController < ApplicationController
+class Admin::GenresController < ApplicationController
+  layout 'admin'
+  before_action :set_genre, only: %i[show edit update destroy]
+
   def index
+    @genres = Genre.order('title ASC')
   end
 
   def show
@@ -23,6 +27,7 @@ class GenresController < ApplicationController
   private
 
   def set_genre
+    @genre = Genre.friendly.find(params[:id])
   end
 
   def genre_params

@@ -17,11 +17,11 @@ class Admin::GenresController < ApplicationController
   end
 
   def create
-    @genres = Genre.new(genre_params)
+    @genre = Genre.new(genre_params)
 
     respond_to do |format|
       if @genre.save
-        format.html { redirect_to @genre, notice: 'Genre was successfully created' }
+        format.html { redirect_to admin_genre_path(@genre), notice: 'Genre was successfully created' }
       else
         format.html { render :new }
       end
@@ -31,7 +31,7 @@ class Admin::GenresController < ApplicationController
   def update
     respond_to do |format|
       if @genres.update(genre_params)
-        format.html { redirect_to @genre, notice: 'Genre was successfully updated' }
+        format.html { redirect_to admin_genre_path(@genre), notice: 'Genre was successfully updated' }
       else
         format.html { render :edit }
       end

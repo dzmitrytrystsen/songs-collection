@@ -30,7 +30,7 @@ class Admin::GenresController < ApplicationController
 
   def update
     respond_to do |format|
-      if @genres.update(genre_params)
+      if @genre.update(genre_params)
         format.html { redirect_to admin_genre_path(@genre), notice: 'Genre was successfully updated' }
       else
         format.html { render :edit }

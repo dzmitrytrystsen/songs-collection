@@ -1,0 +1,8 @@
+<div>
+  <h2 ><%= @genre.title.camelize %></h2>
+  <p>
+    <%= link_to 'Edit', edit_admin_genre_path(@genre) %> /
+    <%= link_to 'Destroy', admin_genre_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+  <%= link_to 'Back', admin_genres_path, class: 'btn btn-primary' %>
+</div>

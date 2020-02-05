@@ -1,0 +1,8 @@
+<div>
+  <h1>Editing "<%= @genre.title.camelize %>"</h1>
+
+  <%= render 'form', genre: @genre %>
+
+  <%= link_to 'Show', admin_genre_path %> |
+  <%= link_to 'Back',  admin_genres_path %>
+</div>

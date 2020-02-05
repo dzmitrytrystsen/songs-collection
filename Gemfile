@@ -30,6 +30,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'friendly_id', '~> 5.1'
 
+gem 'bootstrap', '~> 4.4.1'
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+gem 'sprockets-rails', '2.3.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
